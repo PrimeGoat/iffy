@@ -12,10 +12,13 @@ debug(process.argv);
 
 if(process.argv.length < 4) {
 	console.log("Usage: " + process.argv[1] + " <temperature(C/F/K)> <C/F/K>\n  Example: " + process.argv[1] + " 100C F");
+	return;
 }
 
 const ctemps = require('./cf.js');
 const ktemps = require('./ck.js');
+
+//ctemps.CtoF();
 
 let srcTemp = process.argv[2].slice(0, process.argv[2].length-1);
 let srcScale = process.argv[2][process.argv[2].length-1].toUpperCase();
@@ -23,7 +26,6 @@ let destTemp = process.argv[3].toUpperCase();
 let answer;
 
 debug(srcTemp + '\n' + srcScale + '\n' + destTemp);
-
 
 
 switch(srcScale.toUpperCase()) {

@@ -1,5 +1,3 @@
-
-
 function FtoC(f) {
     f = Number(f);
     return (f - 32) * 5 / 9;
