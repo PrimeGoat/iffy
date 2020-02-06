@@ -1,6 +1,8 @@
-function ctoK (celsiusNumber) {
+function CtoK (celsiusNumber) {
     return celsiusNumber + 273.15;
 }
-function ktoC (kelvinNumber) {
+function KtoC (kelvinNumber) {
     return kelvinNumber - 273.15;
 }
+
+module.exports = { CtoK: CtoK, KtoC: KtoC };
