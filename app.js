@@ -8,8 +8,6 @@ function debug(msg) {
     }
 }
 
-debug("testing");
-
 debug(process.argv);
 
 if(process.argv.length < 4) {
@@ -35,6 +33,10 @@ switch(srcScale.toUpperCase()) {
 		} else if(destTemp ==='K') {
 			//console.log(ctemps.FtoC(srcTemp));
 			answer = ktemps.CtoK(ctemps.FtoC(srcTemp)) + 'K';
+		} else if(destTemp === 'F') {
+			answer = srcTemp;
+		} else {
+			answer = "Invalid destination temperature scale.";
 		}
 		break;
 	case 'K':
@@ -43,6 +45,10 @@ switch(srcScale.toUpperCase()) {
 		} else if(destTemp ==='F') {
 			//console.log(ctemps.FtoC(srcTemp));
 			answer = ctemps.CtoF(ktemps.KtoC(srcTemp)) + 'F';
+		} else if(destTemp === 'K') {
+			answer = srcTemp;
+		} else {
+			answer = "Invalid destination temperature scale.";
 		}
 		break;
 	case 'C':
@@ -51,6 +57,10 @@ switch(srcScale.toUpperCase()) {
 		} else if(destTemp ==='K') {
 			//console.log(ctemps.FtoC(srcTemp));
 			answer = ktemps.CtoK(srcTemp) + 'K';
+		} else if(destTemp === 'C') {
+			answer = srcTemp;
+		} else {
+			answer = "Invalid destination temperature scale.";
 		}
 		break;
 	default:
